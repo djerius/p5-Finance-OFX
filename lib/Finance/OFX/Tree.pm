@@ -53,6 +53,7 @@ sub parse
 			@{$stack[0]}[-1]->{content} = $data;
 		    }, 'dtext' ]);
     $p->unbroken_text(1);   # Want element contents in single blocks to facilitate parsing
+    $p->marked_sections(1);
     $p->parse($source);
     \@tree;
 }
